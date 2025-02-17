@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="listadoboz" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,243,136"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="590,35,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

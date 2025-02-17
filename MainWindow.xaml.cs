@@ -19,10 +19,13 @@ namespace WpfApp5 {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        List<Krater> lista = new List<Krater>();
+
         public MainWindow() {
             InitializeComponent();
             beolvas("felszin.txt");
-
+            // 2. feladat
+            label2.Content = lista.Count;
         }
 
         private void beolvas(string v) {
@@ -34,6 +37,7 @@ namespace WpfApp5 {
                     var r = double.Parse(sor[2]);
                     var nev = sor[3];
                     var k = new Krater(x, y, r, nev);
+                    lista.Add(k);
                     //Console.WriteLine(k);
                     listadoboz.Items.Add(k);
                 }
