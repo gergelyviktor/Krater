@@ -26,6 +26,23 @@ namespace WpfApp5 {
             beolvas("felszin.txt");
             // 2. feladat
             label2.Content = lista.Count;
+            // 4. feladat
+            //var max = lista.Max(item => item.R);
+            var max = lista[0].R;
+            foreach (var item in lista) {
+                if (item.R > max) {
+                    max = item.R;
+                    label4.Content = "4.feladat\nA legnagyobb kráter neve és sugara: " + item.Nev + " " + item.R;
+                }
+            }
+            // 6. feladat
+            //double tav = tavolsag(100.0,50.0,200.0,80.0);
+
+        }
+
+        //5. feladat
+        private double tavolsag(double x1, double y1, double x2, double y2) {
+            return Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
 
         private void beolvas(string v) {
@@ -40,6 +57,7 @@ namespace WpfApp5 {
                     lista.Add(k);
                     //Console.WriteLine(k);
                     listadoboz.Items.Add(k);
+                    cbFeladat6.Items.Add(k.Nev);
                 }
             }
         }
@@ -56,6 +74,27 @@ namespace WpfApp5 {
             }
             if (!flag) {
                 MessageBox.Show("Nincs ilyen kráter!");
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            // megkeressük az adott névhez tartozó rekord indexét a listában
+            var index = -1;
+            foreach (var item in lista) {
+                if (item.Nev == cbFeladat6.SelectedValue.ToString()) {
+                    index = lista.IndexOf(item);
+                    break;
+                }
+            }
+            //MessageBox.Show(lista[index].Nev+" "+ lista[index].X);
+            listadoboz.Items.Clear();
+            foreach (var item in lista) {
+
+                if (item.Nev == lista[index].Nev) continue;
+
+                var tav = tavolsag(lista[index].X, lista[index].Y, item.X, item.Y);
+                if (tav >= lista[index].R + item.R)
+                    listadoboz.Items.Add(item.Nev + " " + tav);
             }
         }
     }
