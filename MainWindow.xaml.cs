@@ -8,11 +8,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.WebRequestMethods;
 
 namespace WpfApp5 {
     /// <summary>
@@ -23,6 +25,11 @@ namespace WpfApp5 {
 
         public MainWindow() {
             InitializeComponent();
+            kor1.Width = 200;
+            kor1.Height = 200;
+            kor1.Stroke = new SolidColorBrush(Colors.Black);
+            Canvas.SetLeft(kor1, 100);
+            Canvas.SetTop(kor1, 50);
             beolvas("felszin.txt");
             // 2. feladat
             label2.Content = lista.Count;

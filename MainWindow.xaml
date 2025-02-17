@@ -13,6 +13,9 @@
         <Button x:Name="btnFeladat3" Content="Keres" HorizontalAlignment="Left" Margin="733,98,0,0" VerticalAlignment="Top" Click="btnFeladat3_Click"/>
         <Label x:Name="label4" Content="Label" HorizontalAlignment="Left" Margin="24,314,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbFeladat6" HorizontalAlignment="Left" Margin="590,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-
+        <Canvas>
+            <Ellipse x:Name="kor1" />
+            <Ellipse x:Name="kor2" />
+        </Canvas>
     </Grid>
 </Window>
