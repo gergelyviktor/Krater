@@ -16,5 +16,8 @@ namespace WpfApp5 {
             this.R = r;
             this.Nev = nev;
         }
+        public override string ToString() {
+            return $"Név: {Nev}, x: {X}, y: {Y}, sugar: {R}";
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,18 @@ namespace WpfApp5 {
         }
 
         private void beolvas(string v) {
-            throw new NotImplementedException();
+            using (var sr = new StreamReader(v)) {
+                while (!sr.EndOfStream) {
+                    var sor = sr.ReadLine().Split('\t');
+                    var x = double.Parse(sor[0]);
+                    var y = double.Parse(sor[1]);
+                    var r = double.Parse(sor[2]);
+                    var nev = sor[3];
+                    var k = new Krater(x, y, r, nev);
+                    //Console.WriteLine(k);
+                    listadoboz.Items.Add(k);
+                }
+            }
         }
     }
 }
