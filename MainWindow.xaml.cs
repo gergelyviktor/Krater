@@ -43,5 +43,20 @@ namespace WpfApp5 {
                 }
             }
         }
+
+        private void btnFeladat3_Click(object sender, RoutedEventArgs e) {
+            var flag = false;
+            foreach (var item in lista) {
+                if (item.Nev == txtFeladat3.Text) {
+                    listadoboz.Items.Clear();
+                    listadoboz.Items.Add(item);
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                MessageBox.Show("Nincs ilyen kráter!");
+            }
+        }
     }
 }

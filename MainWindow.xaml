@@ -9,6 +9,8 @@
     <Grid>
         <ListBox x:Name="listadoboz" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,243,136"/>
         <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="590,35,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFeladat3" HorizontalAlignment="Left" Margin="590,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnFeladat3" Content="Keres" HorizontalAlignment="Left" Margin="733,98,0,0" VerticalAlignment="Top" Click="btnFeladat3_Click"/>
 
     </Grid>
 </Window>
